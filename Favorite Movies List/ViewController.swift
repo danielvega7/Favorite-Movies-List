@@ -10,6 +10,8 @@ import UIKit
 class staticVariables {
     static var movies = [String]()
     static var selectedMovie = ""
+    static var yearMade = [Int]()
+    static var selectedIndex = 0
 }
 
 
@@ -17,8 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
 
     @IBOutlet weak var tableViewOutlet: UITableView!
-    
-    
+    @IBOutlet weak var textFieldOutlet: UITextField!
+    @IBOutlet weak var textFieldYearOutlet: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableViewOutlet.dataSource = self
         
         staticVariables.movies.append("Avengers: Endgame")
+        staticVariables.yearMade.append(2019)
         staticVariables.movies.append("Cars")
+        staticVariables.yearMade.append(2006)
         staticVariables.movies.append("Cars 2")
+        staticVariables.yearMade.append(2011)
         staticVariables.movies.append("The Polar Express")
+        staticVariables.yearMade.append(2004)
         staticVariables.movies.append("Star Wars")
+        staticVariables.yearMade.append(1977)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return staticVariables.movies.count
@@ -46,12 +53,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let jamal = tableViewOutlet.cellForRow(at: indexPath)?.textLabel?.text{
             staticVariables.selectedMovie = jamal
-            
+            staticVariables.selectedIndex = indexPath.row
                 performSegue(withIdentifier: "firstMovieInformation", sender: nil)
             
         }
         
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            staticVariables.movies.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    
+    @IBAction func addAction(_ sender: UIBarButtonItem) {
+        
+        if textFieldOutlet.text == "" || (textFieldYearOutlet.text == "" || Int(textFieldYearOutlet.text!) == nil){
+            let alert = UIAlertController(title: "Issue with text field syntax", message: "fix it", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                
+
+            self.present(alert, animated: true)
+        }
+        
+        
+        
+        
+        else{
+            
+            
+            staticVariables.movies.append(textFieldOutlet.text!)
+            staticVariables.yearMade.append(Int(textFieldYearOutlet.text!)!)
+            tableViewOutlet.reloadData()
+            
+        
+        }
+        
+    }
+    
 
 }
 

@@ -9,8 +9,9 @@ import UIKit
 
 class ViewController2: UIViewController {
 
-    @IBOutlet weak var movieLabelOutlet: UILabel!
+
     
+    @IBOutlet weak var textViewOutlet: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +20,9 @@ class ViewController2: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        movieLabelOutlet.text = "movie: \(staticVariables.selectedMovie)"
+        
+        
+        textViewOutlet.text = "movie: \(staticVariables.selectedMovie), Year Made: \(staticVariables.yearMade[staticVariables.selectedIndex])"
         
     }
     

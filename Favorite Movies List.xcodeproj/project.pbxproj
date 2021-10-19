@@ -17,6 +17,7 @@
 		06983B65271E61BD00527FB6 /* Favorite_Movies_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06983B64271E61BD00527FB6 /* Favorite_Movies_ListUITests.swift */; };
 		06983B67271E61BD00527FB6 /* Favorite_Movies_ListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06983B66271E61BD00527FB6 /* Favorite_Movies_ListUITestsLaunchTests.swift */; };
 		06983B74271E688A00527FB6 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06983B73271E688A00527FB6 /* ViewController2.swift */; };
+		11F88DB1271EF59C006FA5D9 /* MovieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F88DB0271EF59C006FA5D9 /* MovieClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		06983B64271E61BD00527FB6 /* Favorite_Movies_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite_Movies_ListUITests.swift; sourceTree = "<group>"; };
 		06983B66271E61BD00527FB6 /* Favorite_Movies_ListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite_Movies_ListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		06983B73271E688A00527FB6 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		11F88DB0271EF59C006FA5D9 /* MovieClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				06983B45271E61BA00527FB6 /* SceneDelegate.swift */,
 				06983B47271E61BA00527FB6 /* ViewController.swift */,
 				06983B49271E61BA00527FB6 /* Main.storyboard */,
+				11F88DB0271EF59C006FA5D9 /* MovieClass.swift */,
 				06983B73271E688A00527FB6 /* ViewController2.swift */,
 				06983B4C271E61BD00527FB6 /* Assets.xcassets */,
 				06983B4E271E61BD00527FB6 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 				06983B48271E61BA00527FB6 /* ViewController.swift in Sources */,
 				06983B74271E688A00527FB6 /* ViewController2.swift in Sources */,
 				06983B44271E61BA00527FB6 /* AppDelegate.swift in Sources */,
+				11F88DB1271EF59C006FA5D9 /* MovieClass.swift in Sources */,
 				06983B46271E61BA00527FB6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
