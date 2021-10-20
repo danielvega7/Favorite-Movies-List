@@ -36,16 +36,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         staticVariables.moviesNew.append(Movie(n: "The Polar Express", yM: 2004))
         staticVariables.moviesNew.append(Movie(n: "Star Wars", yM: 1977))
         
-        staticVariables.movies.append("Avengers: Endgame")
-        staticVariables.yearMade.append(2019)
-        staticVariables.movies.append("Cars")
-        staticVariables.yearMade.append(2006)
-        staticVariables.movies.append("Cars 2")
-        staticVariables.yearMade.append(2011)
-        staticVariables.movies.append("The Polar Express")
-        staticVariables.yearMade.append(2004)
-        staticVariables.movies.append("Star Wars")
-        staticVariables.yearMade.append(1977)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return staticVariables.moviesNew.count
