@@ -9,9 +9,11 @@ import UIKit
 
 class staticVariables {
     static var movies = [String]()
-    static var selectedMovie = ""
     static var yearMade = [Int]()
+    static var selectedMovie = ""
     static var selectedIndex = 0
+    
+    static var moviesNew = [Movie]()
 }
 
 
@@ -28,6 +30,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         
+        staticVariables.moviesNew.append(Movie(n: "Avengers: Endgame", yM: 2019))
+        staticVariables.moviesNew.append(Movie(n: "Cars", yM: 2006))
+        staticVariables.moviesNew.append(Movie(n: "Cars2", yM: 2011))
+        staticVariables.moviesNew.append(Movie(n: "The Polar Express", yM: 2004))
+        staticVariables.moviesNew.append(Movie(n: "Star Wars", yM: 1977))
+        
         staticVariables.movies.append("Avengers: Endgame")
         staticVariables.yearMade.append(2019)
         staticVariables.movies.append("Cars")
@@ -40,13 +48,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         staticVariables.yearMade.append(1977)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return staticVariables.movies.count
+        return staticVariables.moviesNew.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
-        cell.textLabel?.text = "\(staticVariables.movies[indexPath.row])"
+        cell.textLabel?.text = "\(staticVariables.moviesNew[indexPath.row].name)"
         
         return cell
     }
@@ -62,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            staticVariables.movies.remove(at: indexPath.row)
+            staticVariables.moviesNew.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -85,8 +93,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         else{
             
             
-            staticVariables.movies.append(textFieldOutlet.text!)
-            staticVariables.yearMade.append(Int(textFieldYearOutlet.text!)!)
+            staticVariables.moviesNew.append(Movie(n: "\(textFieldOutlet.text!)", yM: Int(textFieldYearOutlet.text!)!))
+           
             tableViewOutlet.reloadData()
             
         

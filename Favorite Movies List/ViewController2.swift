@@ -22,7 +22,7 @@ class ViewController2: UIViewController {
         super.viewDidAppear(true)
         
         
-        textViewOutlet.text = "movie: \(staticVariables.selectedMovie), Year Made: \(staticVariables.yearMade[staticVariables.selectedIndex])"
+        textViewOutlet.text = "movie: \(staticVariables.selectedMovie), Year Made: \(staticVariables.moviesNew[staticVariables.selectedIndex].yearMade)"
         
     }
     

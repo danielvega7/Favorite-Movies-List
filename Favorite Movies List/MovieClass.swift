@@ -8,5 +8,13 @@
 import Foundation
 
 public class Movie {
+    var name: String
+    var yearMade: Int
+    
+    init(n: String, yM: Int) {
+        name = n
+        yearMade = yM
+    }
+    
     
 }
