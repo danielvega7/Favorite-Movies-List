@@ -23,6 +23,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableViewOutlet: UITableView!
     @IBOutlet weak var textFieldOutlet: UITextField!
     @IBOutlet weak var textFieldYearOutlet: UITextField!
+    let defaults = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         staticVariables.moviesNew.append(Movie(n: "Cars2", yM: 2011))
         staticVariables.moviesNew.append(Movie(n: "The Polar Express", yM: 2004))
         staticVariables.moviesNew.append(Movie(n: "Star Wars", yM: 1977))
+        
+        if let mov = defaults.object(forKey: "myMovies") {
+            staticVariables.moviesNew = mov as! [Movie]
+        }
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,6 +97,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
+   
+    @IBAction func saveAction(_ sender: UIButton) {
+        
+        defaults.set(staticVariables.moviesNew, forKey: "myMovies")
+    }
+    
+    
+    
     
 
 }

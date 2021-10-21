@@ -62,16 +62,29 @@
                             </textField>
                         </barButtonItem>
                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="aNC-iv-cnK">
-                            <rect key="frame" x="129" y="5" width="132" height="34"/>
+                            <rect key="frame" x="109.33333333333331" y="5" width="132" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="zGM-X7-YpL">
-                            <connections>
-                                <action selector="addAction:" destination="BYZ-38-t0r" id="4s9-KA-zmY"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="add" id="zGM-X7-YpL">
+                                <connections>
+                                    <action selector="addAction:" destination="BYZ-38-t0r" id="4s9-KA-zmY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="eif-cy-UwC">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="fpd-0z-0JM">
+                                    <rect key="frame" x="247.33333333333337" y="6.6666666666666679" width="86" height="31.000000000000004"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="icloud.and.arrow.down" catalog="system"/>
+                                    <connections>
+                                        <action selector="saveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qwI-qI-4gC"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewOutlet" destination="bQk-Il-0Le" id="DB7-Q8-Zw6"/>
@@ -244,7 +257,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="icloud.and.arrow.down" catalog="system" width="128" height="112"/>
+        <image name="info.circle" catalog="system" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
