@@ -38,10 +38,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         staticVariables.moviesNew.append(Movie(n: "The Polar Express", yM: 2004))
         staticVariables.moviesNew.append(Movie(n: "Star Wars", yM: 1977))
         
-        if let mov = defaults.object(forKey: "myMovies") {
-            staticVariables.moviesNew = mov as! [Movie]
+        if let items = UserDefaults.standard.data(forKey: "shoppingList") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([Movie].self, from: items){
+                staticVariables.moviesNew = decoded
+               
+            }
         }
-        
+
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return staticVariables.moviesNew.count
@@ -100,7 +104,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
     @IBAction func saveAction(_ sender: UIButton) {
         
-        defaults.set(staticVariables.moviesNew, forKey: "myMovies")
+        let encoder = JSONEncoder()
+        
+        if let encoded = try? encoder.encode(staticVariables.moviesNew) {
+            
+            UserDefaults.standard.set(encoded, forKey: "shoppingList")
+            
+        }
     }
     
     

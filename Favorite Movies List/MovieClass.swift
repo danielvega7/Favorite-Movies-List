@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Movie {
+public class Movie: Codable {
     var name: String
     var yearMade: Int
     
